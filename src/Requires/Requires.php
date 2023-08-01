@@ -1,0 +1,12 @@
+<?php
+    require_once('src/Constants/Constants.php');
+    require_once('src/Expressionable/ExpressionableInterface.php');
+    require_once('src/Expressionable/Concerns/Expressionable.php');
+    require_once('src/Error/ErrorInterface.php');
+    require_once('src/Error/Concerns/Error.php');
+    require_once('src/Valid/ValidInterface.php');
+    require_once('src/Valid/Concerns/Valid.php');
+    require_once('src/Compiler/Concerns/Lines.php');
+    require_once('src/Compiler/Concerns/Buffer.php');
+    require_once('src/Compiler/CompilerInterface.php');
+    require_once('src/Compiler/Compiler.php');

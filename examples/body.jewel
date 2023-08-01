@@ -1,0 +1,34 @@
+<?php
+    $numbers = [];
+
+    for($i = 0; $i < 10; $i++) $numbers[] = random_int(0, 100);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    *foreach($numbers as $number)
+        <h1>Your number is: {$number} doubled it is: {$number*2} </h1>
+        <h2>Facts about your number: </h2>
+
+        <p>
+            Number {$number} is:
+            *if($number % 2 === 0) even *elseif($number === 50) half of 100 *else odd *endif
+
+        </p>
+    *endforeach
+
+    *for($i = 0; $i < 10; $i++)
+        {$i} <br>
+    *endfor
+
+    *while(false)
+        test
+    *endwhile
+</body>
+</html>
