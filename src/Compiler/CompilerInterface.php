@@ -48,4 +48,20 @@
          * This method returns compiled line
          */
         public function TransformLine(int $line_number, string $line_buffer): string;
+
+        /**
+         * @name Parse<TAG>TagExpr
+         * @param {string $line_buffer}
+         * @return string
+         * 
+         * This methods returns line with parsed <TAG>
+         */
+        public function ParseContentTagExpr(string $line_buffer): string;
+        public function ParseIfTagExpr(string $line_buffer): string;
+        public function ParseElseIfTagExpr(string $line_buffer): string;
+        public function ParseForeachTagExpr(string $line_buffer): string;
+        public function ParseSwitchTagExpr(string $line_buffer): string;
+        public function ParseCaseTagExpr(string $line_buffer): string;
+        public function ParseForTagExpr(string $line_buffer): string;
+        public function ParseWhileTagExpr(string $line_buffer): string;
     }
