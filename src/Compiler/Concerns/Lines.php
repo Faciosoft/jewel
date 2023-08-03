@@ -78,7 +78,7 @@
             return preg_replace_callback(JEWEL_COMPONENT_TAG_REGEX, function($tags) {
                 foreach($tags as $tag) {
                     $tag = substr($tag, 10, strlen($tag) - 10);
-                    return "<?php \$cms->IncludeClientComponent $tag: ?>";
+                    return "<?php \$cms->IncludeClientComponent $tag; ?>";
                 }
             }, $line_buffer);
         }
