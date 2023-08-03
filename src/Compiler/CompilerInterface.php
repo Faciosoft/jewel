@@ -64,4 +64,5 @@
         public function ParseCaseTagExpr(string $line_buffer): string;
         public function ParseForTagExpr(string $line_buffer): string;
         public function ParseWhileTagExpr(string $line_buffer): string;
+        public function ParseComponentTagExpr(string $line_buffer): string;
     }

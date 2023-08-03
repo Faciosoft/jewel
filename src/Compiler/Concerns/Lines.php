@@ -74,6 +74,15 @@
             }, $line_buffer);
         }
 
+        public function ParseComponentTagExpr(string $line_buffer): string {
+            return preg_replace_callback(JEWEL_COMPONENT_TAG_REGEX, function($tags) {
+                foreach($tags as $tag) {
+                    $tag = substr($tag, 10, strlen($tag) - 10);
+                    return "<?php \$cms->IncludeClientComponent $tag: ?>";
+                }
+            }, $line_buffer);
+        }
+
         public function TransformLine(int $line_number, string $line_buffer): string {
             if($this->HasExpression($line_buffer, JEWEL_CONTENT_TAG_REGEX)) $line_buffer = $this->ParseContentTagExpr($line_buffer);
             if($this->HasExpression($line_buffer, JEWEL_IF_TAG_REGEX)) $line_buffer = $this->ParseIfTagExpr($line_buffer);
@@ -83,6 +92,7 @@
             if($this->HasExpression($line_buffer, JEWEL_CASE_TAG_REGEX)) $line_buffer = $this->ParseCaseTagExpr($line_buffer);
             if($this->HasExpression($line_buffer, JEWEL_FOR_TAG_REGEX)) $line_buffer = $this->ParseForTagExpr($line_buffer);
             if($this->HasExpression($line_buffer, JEWEL_WHILE_TAG_REGEX)) $line_buffer = $this->ParseWhileTagExpr($line_buffer);
+            if($this->HasExpression($line_buffer, JEWEL_COMPONENT_TAG_REGEX)) $line_buffer = $this->ParseComponentTagExpr($line_buffer);
 
             // Smooth transformation
             $line_buffer = str_replace("*endif", "<?php endif; ?>", $line_buffer);

@@ -12,6 +12,8 @@
     <title>Document</title>
 </head>
 <body>
+    <?php $cms->IncludeClientComponent ('Topbar'): ?>
+
     <?php foreach($numbers as $number): ?>
         <h1>Your number is: <?php echo $number; ?> doubled it is: <?php echo $number*2; ?> </h1>
         <h2>Facts about your number: </h2>

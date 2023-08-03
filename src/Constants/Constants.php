@@ -8,3 +8,4 @@
     define("JEWEL_CASE_TAG_REGEX", "(\*case\([^\)]*\))");
     define("JEWEL_FOR_TAG_REGEX", "(\*for\([^\)]*\))");
     define("JEWEL_WHILE_TAG_REGEX", "(\*while\([^\)]*\))");
+    define("JEWEL_COMPONENT_TAG_REGEX", "(\*component\([^\)]*\))");
